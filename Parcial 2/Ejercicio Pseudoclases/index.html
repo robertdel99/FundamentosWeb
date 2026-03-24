@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            transition: width 2s 0s ease;
+        }
+
+        div:hover{
+            background-color: orange;
+            width: 600px;
+            height: 300px;
+        }
+
+        p{
+            color: darkgreen;
+            font-size: medium;
+        }
+
+        p:active{
+            color: crimson;
+            font-size: large;
+        }
+
+        input:focus{
+            color: blue;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+    <p>
+        Este es un ejemplo de pseudoclases usando hover, active y focus.
+    </p>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <button>Presionar</button>
+
+</body>
+</html>
