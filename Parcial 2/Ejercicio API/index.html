@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Personajes</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eaeaea;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .contenedor{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .personaje{
+            width: 190px;
+            background-color: white;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .personaje img{
+            width: 100%;
+            height: 190px;
+        }
+
+        .personaje p{
+            font-weight: bold;
+            padding: 10px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body onload="obtenerPersonajes()">
+
+    <h1>Lista de personajes</h1>
+
+    <div class="contenedor" id="contenedor"></div>
+
+    <script>
+        async function obtenerPersonajes(){
+            const contenedor = document.getElementById("contenedor");
+
+            try{
+                const respuesta = await fetch("https://rickandmortyapi.com/api/character");
+                const datos = await respuesta.json();
+
+                const lista = datos.results;
+
+                for(let i = 0; i < lista.length; i++){
+                    const tarjeta = document.createElement("div");
+                    tarjeta.classList.add("personaje");
+
+                    const foto = document.createElement("img");
+                    foto.src = lista[i].image;
+
+                    const nombre = document.createElement("p");
+                    nombre.textContent = lista[i].name;
+
+                    tarjeta.appendChild(foto);
+                    tarjeta.appendChild(nombre);
+
+                    contenedor.appendChild(tarjeta);
+                }
+            }catch(error){
+                console.log("Error al cargar la API");
+            }
+        }
+    </script>
+
+</body>
+</html>
