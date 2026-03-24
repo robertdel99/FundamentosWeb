@@ -6,25 +6,30 @@
 }
 
 body{
-    background-color: #111827;
+    background-color: #1b2238;
     color: white;
 }
 
 header{
-    background-color: #0b1220;
+    background-color: #111827;
     padding: 15px 0;
 }
 
 .container{
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
-.nav{
+.nav-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo{
+    color: white;
+    font-size: 28px;
 }
 
 nav a{
@@ -34,37 +39,54 @@ nav a{
 }
 
 nav a:hover{
-    color: #60a5fa;
-}
-
-.logo{
-    color: #60a5fa;
-}
-
-section{
-    margin: 40px 0;
+    color: #7dd3fc;
 }
 
 .hero{
-    text-align: center;
-    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 0;
 }
 
-.hero h2{
-    margin-bottom: 15px;
+.texto{
+    width: 50%;
 }
 
-.hero p{
+.texto h2{
+    font-size: 48px;
     margin-bottom: 20px;
+}
+
+.texto p{
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .boton{
     display: inline-block;
-    background-color: #2563eb;
-    color: white;
+    margin-top: 20px;
+    background-color: #67e8f9;
+    color: black;
     text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.imagen{
+    width: 40%;
+    text-align: center;
+}
+
+.imagen img{
+    width: 100%;
+    max-width: 320px;
+}
+
+section{
+    margin: 40px 0;
 }
 
 .grid{
@@ -75,8 +97,8 @@ section{
 }
 
 .card{
-    background-color: #1f2937;
-    width: 260px;
+    background-color: #24304d;
+    width: 280px;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -86,8 +108,8 @@ section{
     width: 100%;
     height: 180px;
     object-fit: cover;
+    margin-bottom: 15px;
     border-radius: 8px;
-    margin-bottom: 10px;
 }
 
 .card h3{
@@ -96,17 +118,18 @@ section{
 
 .card p{
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 form{
-    width: 320px;
+    width: 350px;
     margin: auto;
     display: flex;
     flex-direction: column;
 }
 
 input, select, textarea{
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -115,27 +138,52 @@ input, select, textarea{
 button{
     padding: 10px;
     border: none;
-    background-color: #22c55e;
-    color: white;
     border-radius: 5px;
+    background-color: #67e8f9;
+    color: black;
+    font-weight: bold;
     cursor: pointer;
 }
 
 table{
     width: 100%;
     border-collapse: collapse;
-    background-color: #1f2937;
+    background-color: #24304d;
 }
 
 th, td{
-    border: 1px solid #374151;
+    border: 1px solid #3b4b70;
     padding: 10px;
     text-align: center;
 }
 
 footer{
-    background-color: #0b1220;
-    text-align: center;
-    padding: 20px;
     margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #111827;
+}
+
+@media (max-width: 768px){
+    .hero{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto{
+        width: 100%;
+    }
+
+    .imagen{
+        width: 100%;
+    }
+
+    .nav-container{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a{
+        margin: 0 8px;
+    }
 }
